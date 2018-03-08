@@ -77,7 +77,7 @@ When most people think about diversity, they think about the total number of spe
 
 [Diversity indices](https://en.wikipedia.org/wiki/Diversity_index) are more complex metrics that take the total number of species *and* their abundances into account (in different ways, depending on the index).  
 
-Experts in the region have indicated that each metric is valuable for different reasons. The scientific literature underscores the need to consider multiple diversity indices, even though some may seem interchangeable @Morris2014. In general, diversity indices that reflect species dominance and identity are more effective than Species Richness for tracking change over time @Hillebrand2018. 
+Experts in the region have indicated that each metric is valuable for different reasons. The scientific literature underscores the need to consider multiple diversity indices, even though some may seem interchangeable ([Morris et al. 2014](#References)). In general, diversity indices that reflect species dominance and identity are more effective than Species Richness for tracking change over time ([Hillebrand et al. 2018](#References)). 
 
 Because each metric integrates information differently, it is important to know how they are similar or different, and how the outputs could be used.  
 
@@ -290,4 +290,11 @@ ggplotly(b3)
 
 ###
 
-**ANSWER:** While the Shannon and Simpson Diversity values show a similar response to depth habitats (diversity generally increasing with depth), Species Richness is different, with Richness being highest in the 1000-2000m depth habitat and generally decreasing in deeper habitats. 
+**ANSWER:** While the Shannon and Simpson Diversity values show a similar response to depth habitats (diversity generally increasing with depth), Species Richness is different, with Richness being highest in the 1000-2000m depth habitat and generally decreasing in deeper habitats.  
+
+***
+
+### References
+Hillebrand H, Blasius B, Borer ET, et al. 2018. Biodiversity change is uncoupled from species richness trends: Consequences for conservation and monitoring. Journal of Applied Ecology 55(1): 169-184. doi:10.1111/1365-2664.12959.  
+
+Morris EK, Caruso T, Buscot F, et al. 2014. Choosing and using diversity indices: insights for ecological applications from the German Biodiversity Exploratories. Ecology and Evolution 4(18): 3514-3524. doi:10.1002/ece3.1155.
