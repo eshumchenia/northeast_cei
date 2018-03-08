@@ -1,0 +1,10 @@
+name: maps_hists
+title:
+username:
+account: eshum
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 295902
+bundleId: 1259626
+url: https://eshum.shinyapps.io/maps_hists/
+when: 1520530527.28937

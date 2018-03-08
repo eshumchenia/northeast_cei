@@ -8,12 +8,13 @@ library(ggplot2)
 library(plotly)
 library(GGally)
 library(shiny)
+library(rgdal)
 
 ## load data: these are rasters of species richness, shannon index, and simpson index for mdat cetacean models.
 
-cet_richness <-raster("~/Dropbox/NROC/1 IEA DATA DEV/northeast_cei/data/div/mammal_richness_Cetaceans.tif")
-cet_simpson <-raster("~/Dropbox/NROC/1 IEA DATA DEV/northeast_cei/data/div/mammal_simpson_Cetaceans.tif")
-cet_shannon <-raster("~/Dropbox/NROC/1 IEA DATA DEV/northeast_cei/data/div/mammal_shannon_Cetaceans.tif")
+cet_richness <-raster("mammal_richness_Cetaceans.tif")
+cet_simpson <-raster("mammal_simpson_Cetaceans.tif")
+cet_shannon <-raster("mammal_shannon_Cetaceans.tif")
 
 ## clip all rasters to the same extent as richness
 cet_richness <-crop(cet_richness, extent(-347000, 1500000, -1081000, 1400000))

@@ -1,14 +1,16 @@
 ---
 title: "Diversity"
-runtime: shiny
-output: html_notebook
+output:
+  html_document:
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
 ---
-
-# {.tabset}
 
 ```{block, type='rmdcomment'}
 
-**WHAT YOU NEED TO KNOW**  
+##**WHAT YOU NEED TO KNOW**  
 
 **Different diversity metrics may respond to species' abundance patterns differently, and you may need to look at one or a combination of them to most accurately answer your specific questions in the context of the habitat type or ecological component that is most important to you.**  
 
@@ -36,6 +38,7 @@ library(ggplot2)
 library(plotly)
 library(GGally)
 library(shiny)
+library(rgdal)
 
 ## load data: these are rasters of species richness, shannon index, and simpson index for mdat cetacean models.
 
@@ -68,7 +71,7 @@ h3 <- hist(cet_shannon, breaks=18)
 ```
 
 
-## What are diversity metrics?
+### What are diversity metrics?
 
 When most people think about diversity, they think about the total number of species in an area. However, the total number of species is a metric called [Species Richness](https://en.wikipedia.org/wiki/Species_richness).  
 
@@ -78,10 +81,11 @@ Experts in the region have indicated that each metric is valuable for different 
 
 Because each metric integrates information differently, it is important to know how they are similar or different, and how the outputs could be used.  
 
-MDAT has developed diversity data products using three different metrics: [Species Richness](https://en.wikipedia.org/wiki/Species_richness), the [Shannon index](https://en.wikipedia.org/wiki/Diversity_index#Shannon_index), and the [Simpson index](https://en.wikipedia.org/wiki/Diversity_index#Simpson_index). 
+MDAT has developed diversity data products using three different metrics: [Species Richness](https://en.wikipedia.org/wiki/Species_richness), the [Shannon index](https://en.wikipedia.org/wiki/Diversity_index#Shannon_index), and the [Simpson index](https://en.wikipedia.org/wiki/Diversity_index#Simpson_index).
 
+***
 
-## Dig deeper {.tabset}
+## DIG DEEPER {.tabset}
 
 To know how and when each metric could be used, we asked the following questions:  
 
@@ -137,20 +141,7 @@ hist2 <-ggplotly(ph2)
 map3 <-ggplotly(m3)
 hist3 <-ggplotly(ph3)
 
-richness <- subplot(map1, hist1)
-simpson <- subplot(map2, hist2)
-shannon <- subplot(map3, hist3)
-
 ```
-
-```{r, echo = FALSE}
-shinyAppDir(
-  "data/div")
-  options=list(
-    width="100%", height=700
-  )
-```
-
 
 ### Species Richness
 ```{r richness-fig, echo = FALSE, fig.asp = 0.6}
@@ -159,12 +150,16 @@ subplot(map1, hist1)
 
 ```
 
+***
+
 ### Simpson Index
 ```{r simpson-fig, echo = FALSE, fig.asp = 0.6}
 
 subplot(map2, hist2)
 
 ```
+
+***
 
 ### Shannon Index
 ```{r shannon-fig, echo = FALSE, fig.asp = 0.6}
@@ -175,7 +170,9 @@ subplot(map3, hist3)
 
 ***
 
-#### Are the metrics similar or different?
+## 
+
+### Are the metrics similar or different?
 
 **ANSWER:** From the maps and histograms we can tell that Shannon and Simpson are more similar to each other than either of them are to Species Richness. We can check this by doing a simple correlation between each pair of metrics (a value of 1.0 = a perfect positive correlation, a value of -1.0 = a perfect negative correlation):
 ```{r corr-fig, echo=FALSE, fig.cap='Correlations between each pair of diversity metrics'}
@@ -196,7 +193,9 @@ ggcorr(cet_metrics, nbreaks=NULL, label=TRUE, label_round=2, label_size=5, label
 
 This result is not surprising since both Shannon and Simpson indices consider abundance information, and Species Richness does not.
 
-#### How do the metrics' results compare to one another?  
+***
+
+### How do the metrics' results compare to one another?  
 
 We know that results for Species Richness are quite different from both Shannon and Simpson results. To understand differences in the results of these two indices (how each deals differently with abundance information), we can plot the Shannon and Simpson results together. The plots below shows how multiple species abundance and richness information at each location has contributed to each diversity index value for a single pixel with relatively high diversity.  
 
@@ -215,7 +214,9 @@ knitr::include_graphics("data/div/Mammal_Diversity_Components_High.png")
 
 This result indicates that the Simpson index gives more weight to highly abundant or dominant species than the Shannon index. The Shannon index treats rare species and dominant species more equally.
 
-#### Do the metrics represent ecological patterns similarly? {.tabset}
+***
+
+### Do the metrics represent ecological patterns similarly? {.tabset}
 
 ```{r regressions, include=FALSE}
 
@@ -250,19 +251,43 @@ We can look at a few different ocean "habitats", defined by differences in depth
 alldata$depth_cat <- cut(alldata$depth, 5, labels = c("<1000m","1000-2000m", "2000-3000m", "3000-4000m", ">4000m"))
 
 b1 <- ggplot(alldata, aes(depth_cat, richness)) + geom_boxplot(aes(fill = depth_cat)) +
-  scale_fill_brewer() + coord_fixed(ratio=0.17) + theme(legend.position = "none", axis.title.y = element_blank(), axis.title.x = element_blank()) + ggtitle("Species Richness")
+  scale_fill_brewer() + coord_fixed(ratio=0.17) + theme(legend.position = "none", axis.title.y = element_blank(), axis.title.x = element_blank())
 
-b2 <- ggplot(alldata, aes(depth_cat, shannon)) + geom_boxplot(aes(fill = depth_cat)) +
-  scale_fill_brewer() + theme(legend.position = "none", axis.title.y = element_blank(), axis.title.x = element_blank()) + coord_fixed(ratio=1.6) + ggtitle("Shannon Diversity")
+b2 <- ggplot(alldata, aes(depth_cat, simpson)) + geom_boxplot(aes(fill = depth_cat)) +
+  scale_fill_brewer() + xlab("Depth 'habitats'") + theme(legend.position = "none", axis.title.y = element_blank()) + coord_fixed(ratio=4.3)
 
-b3 <- ggplot(alldata, aes(depth_cat, simpson)) + geom_boxplot(aes(fill = depth_cat)) +
-  scale_fill_brewer() + xlab("Depth 'habitats'") + theme(legend.position = "none", axis.title.y = element_blank()) + coord_fixed(ratio=4.3) + ggtitle("Simpson Diversity")
+b3 <- ggplot(alldata, aes(depth_cat, shannon)) + geom_boxplot(aes(fill = depth_cat)) +
+  scale_fill_brewer() + theme(legend.position = "none", axis.title.y = element_blank(), axis.title.x = element_blank()) + coord_fixed(ratio=1.6)
+
+```
+
+#### Species Richness
+```{r richnessbox-fig, echo = FALSE}
 
 ggplotly(b1)
 
+```
+
+***
+
+#### Simpson Index
+```{r simpsonbox-fig, echo = FALSE}
+
 ggplotly(b2)
+
+```
+
+***
+
+#### Shannon Index
+```{r shannonbox-fig, echo = FALSE}
 
 ggplotly(b3)
 
 ```
+
+***
+
+###
+
 **ANSWER:** While the Shannon and Simpson Diversity values show a similar response to depth habitats (diversity generally increasing with depth), Species Richness is different, with Richness being highest in the 1000-2000m depth habitat and generally decreasing in deeper habitats. 
