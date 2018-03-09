@@ -1,24 +1,5 @@
 name: northeast-cei
-navbar:
-  title: northeast cei
-  type: default
-  left:
-  - text: overview
-    icon: fa-home
-    href: index.html
-  - text: productivity
-    href: prd.html
-  - text: diversity
-    href: div.html
-  - text: abundance
-    href: abd.html
-  - text: vulnerability
-    href: vln.html
-  - text: rarity
-    href: rar.html
-  right:
-  - icon: fa-question fa-lg
-    href: help.html
+
 output_dir: '.'
 output:
   html_document:
