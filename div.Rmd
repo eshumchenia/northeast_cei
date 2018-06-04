@@ -12,6 +12,8 @@ output:
 
 ```{block, type='rmdcomment'}
 
+<link href="site_libs/fontawesome-free-5.0.13/web-fonts-with-css/css/fontawesome.min.css" rel="stylesheet">
+
 ##**WHAT YOU NEED TO KNOW**  
 
 **Different diversity metrics may respond to species' abundance patterns differently, and you may need to look at one or a combination of them to most accurately answer your specific questions in the context of the habitat type or ecological component that is most important to you.**  
