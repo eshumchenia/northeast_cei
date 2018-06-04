@@ -20,8 +20,9 @@ pre code {
 }
 
 .rmdcomment:before {
-    font-family: FontAwesome;
+    font-family: "Font Awesome 5 Free";
     content: "\f0d0";
+    font-weight: 900;
     left: 10px;
     position: absolute;
     font-size: 45px;
