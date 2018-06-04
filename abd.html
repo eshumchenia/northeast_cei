@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Abundance</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = false;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Abundance</h1>
+
+</div>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+<div class="rmdcomment">
+<h2 id="what-you-need-to-know">
+<strong>WHAT YOU NEED TO KNOW</strong>
+</h2>
+<p>
+<strong>Abundance is dynamic, and the patterns in abundance maps can be driven by one or a few species. Species group and taxa abundance maps should always be used as a starting point for more in-depth analyses of individual species and higher temporal resolutions.</strong>
+</p>
+<ul>
+<li>
+<p>
+Total abundance maps show where all individuals of a species group or whole taxon are distributed on average over a given time period.
+</p>
+</li>
+<li>
+<p>
+Species abundance patterns change throughout the year.
+</p>
+</li>
+<li>
+<p>
+Because of differences in species sampling and mapping methods, we do not represent the same time windows for all species. Cetaceans are characterized monthly, birds are characterized seaonally, and fish are represented by their fall biomass only.
+</p>
+</li>
+<li>
+<p>
+For seasonal and monthly species group abundance products, the composition of species groups may change due to data availability. Consult the data product documentation to understand what species are being represented in a map.
+</p>
+</li>
+</ul>
+</div>
+<hr />
+<div id="why-abundance" class="section level3">
+<h3>Why abundance?</h3>
+<p>Abundance is important for ocean planning because areas where many organisms are present are places where:</p>
+<ol style="list-style-type: decimal">
+<li><p>Any interactions with human uses could affect high numbers of individuals;</p></li>
+<li><p>Organisms could be feeding/foraging, breeding/spawning, rearing young, resting, migrating, or any other function important to the life-history of the species;</p></li>
+<li><p>Biological productivity may be generally high and habitat may be complex</p></li>
+</ol>
+</div>
+<div id="how-is-abundance-mapped" class="section level3">
+<h3>How is abundance mapped?</h3>
+<p>Total abundance maps are developed by simple addition. Abundance maps for each individual species in a group are stacked and added. Each pixel in the resulting map represents the sum of all individuals of all species present there during that time period.</p>
+<div style="text-align: center; padding: 10px">
+<p><img src="data/abd/MDAT_ABUNDANCE.png", width="49%"> <img src="avian_all_gif/avian_all.gif", width="49%"></p>
+</div>
+</div>
+<div id="why-are-there-so-many-abundance-layers" class="section level3">
+<h3>Why are there so many abundance layers?</h3>
+<p>Abundnance is dynamic. The species using an area change due to the patchy distribution of resources in the 3-dimensional ocean environment (<a href="#references">Levin and Whitfield 1994</a>, <a href="#references">Carr et al. 2003</a>, <a href="#references">Lourie and Vincent 2004</a>, <a href="#references">Briscoe et al. 2016</a>). Data products were developed for the smallest time windows possible (e.g., months, seasons) to capture this variability. Data products were also developed for groups of species with similar ecology, because they may be aggregating in locations for similar reasons.</p>
+<div style="text-align: center; padding: 10px">
+<p><img src="data/abd/monthly_allcet_abd/monthly_allcet.gif", width="49%"> <img src="data/abd/monthly_allcet_abd/annual.png", width="49%"></p>
+</div>
+<p>Compare maps of monthly cetacean abundance (left, animated) with a map of total annual abundance averaged across all months (right).</p>
+<hr />
+</div>
+<div id="dig-deeper" class="section level2">
+<h2>DIG DEEPER</h2>
+<div id="abundance-is-linked-to-other-ecological-factors" class="section level3">
+<h3>Abundance is linked to other ecological factors</h3>
+<p>Static and dynamic features and processes like the shelf break, seamounts, sea surface temperature fronts, eddies, and upwelling areas are mappable and somewhat predictable. These geological and biophysical features and processes can generate locally high productivity and thus attract large numbers of organisms to certain places during certain times of year (<a href="#references">Briscoe et al. 2016 and references therein</a>, <a href="#references">Santora et al. 2017</a>, <a href="#references">Mannocci et al. 2017</a>), including humans (<a href="#references">Watson et al. 2018</a>, <a href="#references">Brigolin et al. 2018</a>). See HABITAT AND OCEANGRAPHIC DRIVERS and PRODUCTIVITY.</p>
+<p><img src="data/abd/fishoceanog/redhake19702014.png" width="50%" style = "padding:10px; display: inline-block" /><img src="data/abd/fishoceanog/SSTfrontprob_fall.png" width="50%" style = "padding:10px; display: inline-block" /></p>
+<p>For example, compare the distribution patterns of red hake biomass (1970-2014) in fall (left) with patterns in sea surface temperature front probability (2002-2013) in fall (right).</p>
+<hr />
+</div>
+<div id="abundance-is-represented-a-few-different-ways" class="section level3">
+<h3>Abundance is represented a few different ways</h3>
+<div id="total-annual-abundance" class="section level4">
+<h4>Total (annual) abundance</h4>
+<p>MDAT summary products were generated with annual mean abundance layers for each species in a group. For annual total abundance, all of the seasonal or monthly models for each species are averaged first. These annual averages are then stacked and summed. Averaging in this way can make it difficult to perceive peaks in abundance at certain times of year.</p>
+</div>
+<div id="monthly-and-seasonal-abundance" class="section level4">
+<h4>Monthly and seasonal abundance</h4>
+<p>Based on feedback from experts and stakeholders, MDAT developed layers representing species group abundance for the finest time windows possible. These layers can be viewed as animations, to show how abundance patterns may change throughout the year.</p>
+</div>
+<div id="number-of-benthic-megafauanl-groups-with-above-average-abundance" class="section level4">
+<h4>Number of benthic megafauanl groups with above average abundance</h4>
+<p>Besides cetaceans, birds, and fish, there is information about benthic megafaunal abundance from surveys conducted by the University of Massachusetts School of Marine Science and Technology (SMAST).</p>
+<p>Based on data from their scallop video survey from 2003-2012, they mapped areas with consistent above average abundance of benthic megafaunal groups (sea stars, scallops, hermit crabs, skates, red hake, moon snails, crabs, flatfishes).</p>
+<div style="text-align: center; padding: 10px">
+<p><img src="images/smast_megafauna.png", width="49%"> <img src="https://www.northeastoceandata.org/files/metadata/Animation/SeaStarAve03_12ByYear.gif", width="49%"></p>
+</div>
+<p>The resulting map (left) summarizes abundance patterns over almost a whole decade, but maps showing abundance patterns changing year-to-year for individual species are also linked to on the <a href="https://www.northeastoceandata.org/data-explorer/?habitat%7Cbiological">Northeast Ocean Data Portal biological habitat map</a> (also shown right).</p>
+<hr />
+</div>
+</div>
+<div id="references" class="section level3">
+<h3>References</h3>
+<p>Brigolin D, Girardi P, Miller PI, Xu W, Nachite D, Zucchetta M, Pranovi F. 2018. Using remote sensing indicators to investigate the association of landings with fronts: Application to the Alboran Sea (western Mediterranean Sea). Fisheries Oceanography (early view). <a href="doi:10.1111/fog.12262" class="uri">doi:10.1111/fog.12262</a>.</p>
+<p><i class="fas fa-unlock"></i> Briscoe DK, Maxwell SM, Kudela R, Crowder LB, Croll D. 2016. Are we missing important areas in pelagic marine conservation? Redefining conservation hotspots in the ocean. Endangered Species Research 29: 229-237. <a href="doi:10.3354/esr00710" class="uri">doi:10.3354/esr00710</a>.</p>
+<p><i class="fas fa-unlock"></i> Carr M, Neigel J, Estes J, Andelman S, Warner R, Largier J. 2003. Comparing marine and terrestrial ecosystems: implications for the design of coastal marine reserves. Ecological Applications 13: 90−107. <a href="doi:10.1890/1051-0761(2003)013%5B0090:CMATEI%5D2.0.CO;2" class="uri">doi:10.1890/1051-0761(2003)013[0090:CMATEI]2.0.CO;2</a>.</p>
+<p>Levin SA, Whitfield M. 1994. Patchiness in marine and terrestrial systems: from individuals to populations. Philosophical Transactions of the Royal Society B 343: 99−103. <a href="doi:10.1098/rstb.1994.0013" class="uri">doi:10.1098/rstb.1994.0013</a>.</p>
+<p>Lourie S, Vincent A. 2004. Using biogeography to help set priorities in marine conservation. Conservation Biology 18: 1004−1020. <a href="doi:10.1111/j.1523-1739.2004.00137.x" class="uri">doi:10.1111/j.1523-1739.2004.00137.x</a>.</p>
+<p><i class="fas fa-unlock"></i> Mannocci L, Boustany AM, Roberts JJ, Palacios DM, Dunn DC, Halpin PN, Viehman S, Moxley J, Cleary J, Bailey H, Bograd SJ, Becker EA, Gardner B, Hartog JR, Hazen EL, Ferguson MC, Forney KA, Kinlan BP, Oliver MJ, Perretti CT, Ridoux V, Teo SLH, Winship A. Temporal resolutions in species distribution models of highly mobile marine animals: Recommendations for ecologists and managers. Diversity and Distributions 23: 1098-1109. <a href="doi:10.1111/ddi.12609" class="uri">doi:10.1111/ddi.12609</a>.</p>
+<p>Santora JA, Syderman WJ, Schroeder ID, Field JC, Miller RR, Wells BK. 2017. Persistence of trophic hotspots and relation to human impacts within an upwelling marine ecosystem. Ecological Applications 27(2): 560-574. <a href="doi:10.1002/eap.1466" class="uri">doi:10.1002/eap.1466</a>.</p>
+<p><i class="fas fa-unlock"></i> Watson JR, Fuller EC, Castruccio FS, Samhouri JF. 2018. Fishermen follow fine-scale physical ocean features for finance. Frontiers in Marine Science 5:46. <a href="doi:10.3389/fmars.2018.00046" class="uri">doi:10.3389/fmars.2018.00046</a>.</p>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -8,6 +8,8 @@ output:
       smooth_scroll: false
 ---
 
+<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+
 ```{block, type='rmdcomment'}
 
 ##**WHAT YOU NEED TO KNOW**  
@@ -297,4 +299,4 @@ ggplotly(b3)
 ### References
 Hillebrand H, Blasius B, Borer ET, et al. 2018. Biodiversity change is uncoupled from species richness trends: Consequences for conservation and monitoring. Journal of Applied Ecology 55(1): 169-184. doi:10.1111/1365-2664.12959.  
 
-Morris EK, Caruso T, Buscot F, et al. 2014. Choosing and using diversity indices: insights for ecological applications from the German Biodiversity Exploratories. Ecology and Evolution 4(18): 3514-3524. doi:10.1002/ece3.1155.
+<i class="fas fa-unlock"></i> Morris EK, Caruso T, Buscot F, et al. 2014. Choosing and using diversity indices: insights for ecological applications from the German Biodiversity Exploratories. Ecology and Evolution 4(18): 3514-3524. doi:10.1002/ece3.1155.
