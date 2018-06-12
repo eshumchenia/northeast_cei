@@ -1,5 +1,4 @@
 name: northeast-cei
-
 output_dir: '.'
 output:
   html_document:
