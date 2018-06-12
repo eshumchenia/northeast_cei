@@ -28,7 +28,7 @@ taxon are distributed on average over a given time period.
 
 * Because of differences in species sampling and mapping methods, we do not 
 represent the same time windows for all species. Cetaceans are characterized 
-monthly, birds are characterized seaonally, and fish are represented by their 
+monthly, birds are characterized seasonally, and fish are represented by their 
 fall biomass only.  
 
 * For seasonal and monthly species group abundance products, the composition of 
@@ -58,8 +58,8 @@ map represents the sum of all individuals of all species present there during
 that time period.  
 
 <div style="text-align: center; padding: 10px">
-<img src="./data/abd/MDAT_ABUNDANCE.png", width="49%"> 
-<img src="./avian_all_gif/avian_all.gif", width="49%">
+<img src="data/abd/MDAT_ABUNDANCE.png", width="49%"> 
+<img src="data/abd/avian_all_gif/avian_all.gif", width="49%">
 </div>  
 
 ### Why are there so many abundance layers?
@@ -73,12 +73,12 @@ for groups of species with similar ecology, because they may be aggregating in
 locations for similar reasons.  
 
 <div style="text-align: center; padding: 10px">
-<img src="./data/abd/monthly_allcet_abd/monthly_allcet.gif", width="49%"> 
-<img src="./data/abd/monthly_allcet_abd/annual.png", width="49%">
+<img src="data/abd/baleen_monthly.gif", width="49%"> 
+<img src="data/abd/baleen_annual.png", width="49%">
 </div>
 
-Compare maps of monthly cetacean abundance (left, animated) with a map of total
-annual abundance averaged across all months (right).  
+Compare maps of monthly baleen whale abundance (left, animated) with a map of total
+annual baleen whale abundance averaged across all months (right).  
 
 ***
 
@@ -95,13 +95,10 @@ organisms to certain places during certain times of year
 ([Watson et al. 2018](#references), [Brigolin et al. 2018](#references)). See 
 HABITAT AND OCEANGRAPHIC DRIVERS and PRODUCTIVITY.  
 
-```{r fishoceanog-fig, echo=FALSE, out.width="50%", out.extra='style = "padding:10px; display: inline-block"'}
-
-fishoceanog <-list.files("data/abd/fishoceanog", pattern = ".png", full.names = TRUE)
-knitr::include_graphics(fishoceanog)
-
-```
-
+<div style="text-align: center; padding: 10px">
+<img src="data/abd/redhake19702014.png", width="49%"> 
+<img src="data/abd/SST_fronts.png", width="49%">
+</div>
 
 For example, compare the distribution patterns of red hake biomass (1970-2014) in fall (left) with 
 patterns in sea surface temperature front probability (2002-2013) in fall (right).  
@@ -133,7 +130,7 @@ with consistent above average abundance of benthic megafaunal groups (sea stars,
 scallops, hermit crabs, skates, red hake, moon snails, crabs, flatfishes).    
 
 <div style="text-align: center; padding: 10px">
-<img src="images/smast_megafauna.png", width="49%">
+<img src="data/abd/smast_megafauna.png", width="49%">
 <img src="https://www.northeastoceandata.org/files/metadata/Animation/SeaStarAve03_12ByYear.gif", width="49%">
 </div>  
 

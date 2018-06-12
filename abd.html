@@ -227,12 +227,8 @@ div.tocify {
 </div>
 
 
-<p><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"></p>
 <p><link href="site_libs/fontawesome-free-5.0.13/web-fonts-with-css/css/fontawesome.min.css" rel="stylesheet"></p>
 <div class="rmdcomment">
-<p>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-</p>
 <p>
 <link href="site_libs/fontawesome-free-5.0.13/web-fonts-with-css/css/fontawesome.min.css" rel="stylesheet">
 </p>
@@ -255,7 +251,7 @@ Species abundance patterns change throughout the year.
 </li>
 <li>
 <p>
-Because of differences in species sampling and mapping methods, we do not represent the same time windows for all species. Cetaceans are characterized monthly, birds are characterized seaonally, and fish are represented by their fall biomass only.
+Because of differences in species sampling and mapping methods, we do not represent the same time windows for all species. Cetaceans are characterized monthly, birds are characterized seasonally, and fish are represented by their fall biomass only.
 </p>
 </li>
 <li>
@@ -279,16 +275,16 @@ For seasonal and monthly species group abundance products, the composition of sp
 <h3>How is abundance mapped?</h3>
 <p>Total abundance maps are developed by simple addition. Abundance maps for each individual species in a group are stacked and added. Each pixel in the resulting map represents the sum of all individuals of all species present there during that time period.</p>
 <div style="text-align: center; padding: 10px">
-<p><img src="data/abd/MDAT_ABUNDANCE.png", width="49%"> <img src="avian_all_gif/avian_all.gif", width="49%"></p>
+<p><img src="data/abd/MDAT_ABUNDANCE.png", width="49%"> <img src="data/abd/avian_all_gif/avian_all.gif", width="49%"></p>
 </div>
 </div>
 <div id="why-are-there-so-many-abundance-layers" class="section level3">
 <h3>Why are there so many abundance layers?</h3>
 <p>Abundnance is dynamic. The species using an area change due to the patchy distribution of resources in the 3-dimensional ocean environment (<a href="#references">Levin and Whitfield 1994</a>, <a href="#references">Carr et al. 2003</a>, <a href="#references">Lourie and Vincent 2004</a>, <a href="#references">Briscoe et al. 2016</a>). Data products were developed for the smallest time windows possible (e.g., months, seasons) to capture this variability. Data products were also developed for groups of species with similar ecology, because they may be aggregating in locations for similar reasons.</p>
 <div style="text-align: center; padding: 10px">
-<p><img src="data/abd/monthly_allcet_abd/monthly_allcet.gif", width="49%"> <img src="data/abd/monthly_allcet_abd/annual.png", width="49%"></p>
+<p><img src="data/abd/baleen_monthly.gif", width="49%"> <img src="data/abd/baleen_annual.png", width="49%"></p>
 </div>
-<p>Compare maps of monthly cetacean abundance (left, animated) with a map of total annual abundance averaged across all months (right).</p>
+<p>Compare maps of monthly baleen whale abundance (left, animated) with a map of total annual baleen whale abundance averaged across all months (right).</p>
 <hr />
 </div>
 <div id="dig-deeper" class="section level2">
@@ -296,7 +292,9 @@ For seasonal and monthly species group abundance products, the composition of sp
 <div id="abundance-is-linked-to-other-ecological-factors" class="section level3">
 <h3>Abundance is linked to other ecological factors</h3>
 <p>Static and dynamic features and processes like the shelf break, seamounts, sea surface temperature fronts, eddies, and upwelling areas are mappable and somewhat predictable. These geological and biophysical features and processes can generate locally high productivity and thus attract large numbers of organisms to certain places during certain times of year (<a href="#references">Briscoe et al. 2016 and references therein</a>, <a href="#references">Santora et al. 2017</a>, <a href="#references">Mannocci et al. 2017</a>), including humans (<a href="#references">Watson et al. 2018</a>, <a href="#references">Brigolin et al. 2018</a>). See HABITAT AND OCEANGRAPHIC DRIVERS and PRODUCTIVITY.</p>
-<p><img src="data/abd/fishoceanog/redhake19702014.png" width="50%" style = "padding:10px; display: inline-block" /><img src="data/abd/fishoceanog/SSTfrontprob_fall.png" width="50%" style = "padding:10px; display: inline-block" /></p>
+<div style="text-align: center; padding: 10px">
+<p><img src="data/abd/redhake19702014.png", width="49%"> <img src="data/abd/SST_fronts.png", width="49%"></p>
+</div>
 <p>For example, compare the distribution patterns of red hake biomass (1970-2014) in fall (left) with patterns in sea surface temperature front probability (2002-2013) in fall (right).</p>
 <hr />
 </div>
@@ -315,7 +313,7 @@ For seasonal and monthly species group abundance products, the composition of sp
 <p>Besides cetaceans, birds, and fish, there is information about benthic megafaunal abundance from surveys conducted by the University of Massachusetts School of Marine Science and Technology (SMAST).</p>
 <p>Based on data from their scallop video survey from 2003-2012, they mapped areas with consistent above average abundance of benthic megafaunal groups (sea stars, scallops, hermit crabs, skates, red hake, moon snails, crabs, flatfishes).</p>
 <div style="text-align: center; padding: 10px">
-<p><img src="images/smast_megafauna.png", width="49%"> <img src="https://www.northeastoceandata.org/files/metadata/Animation/SeaStarAve03_12ByYear.gif", width="49%"></p>
+<p><img src="data/abd/smast_megafauna.png", width="49%"> <img src="https://www.northeastoceandata.org/files/metadata/Animation/SeaStarAve03_12ByYear.gif", width="49%"></p>
 </div>
 <p>The resulting map (left) summarizes abundance patterns over almost a whole decade, but maps showing abundance patterns changing year-to-year for individual species are also linked to on the <a href="https://www.northeastoceandata.org/data-explorer/?habitat%7Cbiological">Northeast Ocean Data Portal biological habitat map</a> (also shown right).</p>
 <hr />
