@@ -1,5 +1,5 @@
 ---
-title: "Diversity"
+title: "Biodiversity"
 output:
   html_document:
     toc: true
@@ -17,7 +17,7 @@ output:
 
 ##**WHAT YOU NEED TO KNOW**  
 
-**Different diversity metrics may respond to species' abundance patterns differently, and you may need to look at one or a combination of them to most accurately answer your specific questions in the context of the habitat type or ecological component that is most important to you.**  
+**Different biodiversity metrics may respond to species' abundance patterns differently, and you may need to look at one or a combination of them to most accurately answer your specific questions in the context of the habitat type or ecological component that is most important to you.**  
 
 FOR EXAMPLE:  
 
@@ -76,17 +76,17 @@ h3 <- hist(cet_shannon, breaks=18)
 ```
 
 
-### What are diversity metrics?
+### What are biodiversity metrics?
 
 When most people think about diversity, they think about the total number of species in an area. However, the total number of species is a metric called [Species Richness](https://en.wikipedia.org/wiki/Species_richness).  
 
-[Diversity indices](https://en.wikipedia.org/wiki/Diversity_index) are more complex metrics that take the total number of species *and* their abundances into account (in different ways, depending on the index).  
+[Biodiversity indices](https://en.wikipedia.org/wiki/Diversity_index) are more complex metrics that take the total number of species *and* their abundances into account (in different ways, depending on the index).  
 
 Experts in the region have indicated that each metric is valuable for different reasons. The scientific literature underscores the need to consider multiple diversity indices, even though some may seem interchangeable ([Morris et al. 2014](#references)). In general, diversity indices that reflect species dominance and identity are more effective than Species Richness for tracking change over time ([Hillebrand et al. 2018](#references)). 
 
 Because each metric integrates information differently, it is important to know how they are similar or different, and how the outputs could be used.  
 
-MDAT has developed diversity data products using three different metrics: [Species Richness](https://en.wikipedia.org/wiki/Species_richness), the [Shannon index](https://en.wikipedia.org/wiki/Diversity_index#Shannon_index), and the [Simpson index](https://en.wikipedia.org/wiki/Diversity_index#Simpson_index).
+MDAT has developed biodiversity data products using three different metrics: [Species Richness](https://en.wikipedia.org/wiki/Species_richness), the [Shannon index](https://en.wikipedia.org/wiki/Diversity_index#Shannon_index), and the [Simpson index](https://en.wikipedia.org/wiki/Diversity_index#Simpson_index).
 
 ***
 
