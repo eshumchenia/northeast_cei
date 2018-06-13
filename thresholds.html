@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Thresholds &amp; Time Options</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = false;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Thresholds &amp; Time Options</h1>
+
+</div>
+
+
+<p><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"></p>
+<p><link href="site_libs/fontawesome-free-5.0.13/web-fonts-with-css/css/fontawesome.min.css" rel="stylesheet"></p>
+<div class="rmdcomment">
+<p>
+<link href="site_libs/fontawesome-free-5.0.13/web-fonts-with-css/css/fontawesome.min.css" rel="stylesheet">
+</p>
+<h2 id="what-you-need-to-know">
+<strong>WHAT YOU NEED TO KNOW</strong>
+</h2>
+<p>
+<strong>There are new tools available in the Data Explorer under Habitat and Oceanographic Drivers, Productivity, Biodiversity, Abundance, Vulnerability, and Rarity in the Data Explorer</strong>
+</p>
+<ul>
+<li>
+<p>
+Threshold products are new data layers that are calculated using a percentile method to represent the top 50%, 25%, and 10% of original data product. Threshold products allow users to visualize the subsets in addition to or separately from the original data, or any other dataset or threshold product.
+</p>
+</li>
+<li>
+<p>
+Time options are available for layers with monthly or seasonal data.
+</p>
+</li>
+</ul>
+</div>
+<div id="instructions" class="section level2">
+<h2>INSTRUCTIONS</h2>
+<table>
+<colgroup>
+<col width="43%" />
+<col width="4%" />
+<col width="51%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="data/tool_instructions/instruct-1.png" /></td>
+<td></td>
+<td>If a data layer is compatible with the threshold tool or time options, a cog or gear icon <i class="fas fa-cog"></i> will be visible next to the layer in the Active Layers Tab. Click the gear icon to open the threshold and time options tools.</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>——————————————————————————————————-</td>
+</tr>
+<tr class="odd">
+<td><img src="data/tool_instructions/instruct-2.png" /></td>
+<td></td>
+<td>The default view displays the “original” data.</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>——————————————————————————————————-</td>
+</tr>
+<tr class="odd">
+<td><img src="data/tool_instructions/instruct-3.png" /></td>
+<td></td>
+<td>By advancing the top slider, three different threshold layers are toggled in sequence. <strong>The 50% threshold represents the 50th percentile of the “original” data; The 25% threshold represents the 75th percentile of the “original” data; The 10% threshold represents the 90th percentile of the “original” data.</strong> The threshold layers are specific to the particular time option that is selected (depending on data availability).</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>——————————————————————————————————-</td>
+</tr>
+<tr class="odd">
+<td><img src="data/tool_instructions/instruct-4.png" /></td>
+<td></td>
+<td>By resetting the threshold slider to original, and advancing the bottom time slider, different seasons or months are toggled in sequence (depending on data availability).</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>——————————————————————————————————-</td>
+</tr>
+<tr class="odd">
+<td><img src="data/tool_instructions/instruct-4.png" /></td>
+<td></td>
+<td>Returning to the threshold slider, any of the three threshold layers can be viewed and toggled in sequence for the selected time option.</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>——————————————————————————————————-</td>
+</tr>
+<tr class="odd">
+<td><img src="data/tool_instructions/instruct-6.png" /></td>
+<td></td>
+<td>Multiple threshold layers can be overlaid on the same map. To add a threshold layer for another data product, click the gear icon for that data product in the Active Layers tab and select the desired threshold and time option. Use the transparency sliders in the Active Layers tab to adjust the visibility of each layer. Drag and drop the layers in the Active Layers tab to adjust the draw order.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+<div id="dig-deeper" class="section level2">
+<h2>DIG DEEPER</h2>
+<div id="what-are-threshold-products-and-time-options" class="section level3">
+<h3>What are threshold products and time options?</h3>
+<p>Threshold products are new data layers that represent a subset of an original data product. Threshold products allow users to visualize the subset in addition to or separately from the original data, or any other dataset or threshold product.</p>
+<p>Time options differ between marine life layers and habitat and oceanographic data layers (see more below).</p>
+<p>Threshold products were calculated for the annual averages (if available) and for each season (if available) or month (if available).</p>
+<div id="marine-life-data-time-options" class="section level4">
+<h4>Marine life data time options</h4>
+<p>Marine life individual species products have been developed at monthly resolution (cetaceans) and seasonal resolution (birds). Species group products were summarized to represent annual averages of these individual species products. Now, new marine life abundance products have been developed at monthly (for cetaceans) and seasonal (for birds) scales to show how species group abundance changes over time.</p>
+</div>
+<div id="habitat-and-oceanographic-data-time-options" class="section level4">
+<h4>Habitat and oceanographic data time options</h4>
+<p>Habitat and oceanographic data have previously been shown with seasonal resolution if the data existed (e.g., Median Chlorophyll-a Concentrations). Now, time option tools allow users to visualize these layers in sequence.</p>
+<hr />
+</div>
+</div>
+<div id="what-methods-were-used-to-determine-thresholds" class="section level3">
+<h3>What methods were used to determine thresholds?</h3>
+<div id="statistical-approach" class="section level4">
+<h4>Statistical approach</h4>
+<p>A percentile approach was chosen due to its familiarity to broad audiences, for ease of communication, and based on knowledge of the statistical distribution patterns of the original datasets.</p>
+<p>After initial testing, three thresholds were chosen to provide multiple options for visualization. As a result, each original data product has three associated percentile-based threshold products.</p>
+<p>Thresholds products were developed for the 50th percentile, 75th percentile, and 90th percentile of each original data product. These products represent the top 50%, 25%, and 10% of the original data, respectively.</p>
+<div class="figure">
+<img src="data/tool_instructions/all_thresholds.png" alt="Examples of the three threshold products. From left to right, the top 50%, 25%, and 10% of All Fish Species (NEFSC) Fall Biomass" width="1712" />
+<p class="caption">
+Examples of the three threshold products. From left to right, the top 50%, 25%, and 10% of All Fish Species (NEFSC) Fall Biomass
+</p>
+</div>
+<p><details> <summary> <strong>Additional information and considerations</strong> </summary></p>
+<ul>
+<li><p><strong>There are many other statistical approaches for calculating thresholds, including using custom/unique approaches depending on the dataset. In the current work, thresholds were applied uniformly to all datasets for demonstration purposes.</strong></p></li>
+<li><p><strong>Ecological approaches to defining thresholds could also be considered.</strong></p></li>
+<li><p><strong>Most of the original datasets are not normally-distributed, which can affect how different statistical thresholding methods represent the data.</strong></p></li>
+</ul>
+<p></details></p>
+</div>
+<div id="spatial-extent" class="section level4">
+<h4>Spatial extent</h4>
+<p>Thresholds were applied at the full spatial extent of each original data layer.</p>
+<p><details> <summary> <strong>Additional information and considerations</strong> </summary></p>
+<p><strong>For some datasets, the range of values is expected to differ depending on spatial extent. For example, Habitat Complexity values are much higher around seamounts and canyons than coastal and shelf environments. Therefore, threshold products will always highlight canyon and seamount areas while areas of high relative habitat complexity near the coast and on the shelf will be less obvious. One option to address this issue would be to segment the data into nearshore and offshore areas and calculate thresholds on those separate subsets.</strong></p>
+<p><strong>If the original data were clipped to a particular study area or region, the area highlighted by threshold products would be different. In this example, the resulting threshold products would only represent the top 10% of the original data <em>in that study area or region</em> and would not be comparable to thresholds calculated for the full extent of the data or for any other study area or region.</strong></p>
+<p></details></p>
+<hr />
+</div>
+</div>
+<div id="which-data-products-have-associated-threshold-products" class="section level3">
+<h3>Which data products have associated threshold products?</h3>
+<p>Thresholds were calculated only for data products in the Habitat and Oceanographic Drivers, Productivity, Biodiversity, Abundance, Vulnerability, and Rarity folders that represent components of ecological importance. In order to calculate thresholds, original data products needed to be continuous rasters. Threshold products were not generated for data products that represent areas or categories such as Canyons or Critical Habitat.</p>
+<p>Threshold products were developed for every available month or season associated with an original data layer.</p>
+<p><details> <summary> <strong>Additional information and considerations</strong> </summary></p>
+<p><strong>Threshold products were not calculated for the following products:</strong></p>
+<ul>
+<li><p><em>Species Richness</em> - from a statistical perspsective, these layers are more similar to categorical data. Initial tests of thresholds applied to these products generated confusing results.</p></li>
+<li><p><em>Simpson and Shannon Diversity Indices</em> - because the numerical value of these indices does not have absolute meaning, thresholds were not applied to these products. Initial tests of thresholds applied to these products generated results that were difficult to interpret.</p></li>
+</ul>
+<p><strong>For some original data products with large numbers of zeroes, some of the threshold products include large numbers of zeroes. For the following datasets, the 50% threshold therefore displays as the full extent of the data: </strong></p>
+<ul>
+<li>Anticyclonic eddy probability winter, spring summer</li>
+</ul>
+<p><strong>For the following datasets, the 50% threshold layer is shown without zeroes:</strong></p>
+<ul>
+<li><p>Baleen whales July, August, September</p></li>
+<li><p>Cetaceans sensitive to high-frequency sound, all months</p></li>
+<li><p>Cetaceans sensitive to low-frequency sound July, August, September</p></li>
+</ul>
+<p><strong>For the following datasets, the 25% threshold layer is shown without zeroes:</strong></p>
+<ul>
+<li>Cetaceans sensitive to high-frequency sound April, May, October, November</li>
+</ul>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
