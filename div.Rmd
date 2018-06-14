@@ -82,7 +82,7 @@ When most people think about diversity, they think about the total number of spe
 
 [Biodiversity indices](https://en.wikipedia.org/wiki/Diversity_index) are more complex metrics that take the total number of species *and* their abundances into account (in different ways, depending on the index).  
 
-Experts in the region have indicated that each metric is valuable for different reasons. The scientific literature underscores the need to consider multiple diversity indices, even though some may seem interchangeable ([Morris et al. 2014](#references)). In general, diversity indices that reflect species dominance and identity are more effective than Species Richness for tracking change over time ([Hillebrand et al. 2018](#references)). 
+Experts in the region have indicated that each metric is valuable for different reasons. The scientific literature underscores the need to consider multiple diversity indices, even though some may seem interchangeable ([Morris et al. 2014](#references)). In general, diversity indices that reflect species dominance and identity are more effective than Species Richness for tracking change over time ([Hillebrand et al. 2018](#references)). [Read more about how these types of indices are calculated and guidance for scientists implementing them.](https://www.rdocumentation.org/packages/vegan/versions/2.4-2/topics/diversity)
 
 Because each metric integrates information differently, it is important to know how they are similar or different, and how the outputs could be used.  
 
