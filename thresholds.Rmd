@@ -17,9 +17,9 @@ output:
 
 ##**WHAT YOU NEED TO KNOW**  
 
-**There are new tools available in the Data Explorer under Habitat and Oceanographic Drivers, Productivity, Biodiversity, Abundance, Vulnerability, and Rarity in the Data Explorer**
+**There are new data and tools available in the Data Explorer under Habitat and Oceanographic Drivers, Productivity, Biodiversity, Abundance, Vulnerability, and Rarity in the Data Explorer**
 
-* Threshold products are new data layers that are calculated using a percentile method to represent the top 50%, 25%, and 10% of original data product. Threshold products allow users to visualize the subsets in addition to or separately from the original data, or any other dataset or threshold product.  
+* Threshold products are new data layers that are calculated using a percentile method to represent the top 50%, 25%, and 10% of the original data product. Threshold products can be visualized in addition to or separately from any other dataset or threshold product.  
 
 * Time options are available for layers with monthly or seasonal data.
 
@@ -54,19 +54,21 @@ Time options differ between marine life layers and habitat and oceanographic
 data layers (see more below).  
 
 Threshold products were calculated for the annual averages (if available) and for 
-each season (if available) or month (if available).
+each season (if available) or month (if available) of the original data.
 
 #### Marine life data time options    
-Marine life individual species products have been developed at monthly resolution 
-(cetaceans) and seasonal resolution (birds). Species group products were summarized 
-to represent annual averages of these individual species products. Now, new 
-marine life abundance products have been developed at monthly (for cetaceans) and 
-seasonal (for birds) scales to show how species group abundance changes over time.  
+Marine life individual species products were developed at monthly resolution 
+(cetaceans) and seasonal resolution (birds). Fish data products are currently 
+available for Fall only. Species group products were summarized to represent 
+annual averages of these individual species products. For fish, summary products 
+use fall data only. Now, new marine life abundance products have been developed 
+at monthly (for cetaceans) and seasonal (for birds) scales to show how species 
+group abundance changes over time.  
 
 #### Habitat and oceanographic data time options
 Habitat and oceanographic data have previously been shown with seasonal 
-resolution if the data existed (e.g., Median Chlorophyll-a Concentrations). Now, 
-time option tools allow users to visualize these layers in sequence.  
+resolution based on data availability (e.g., Median Chlorophyll-a Concentrations). 
+Now, time option tools allow users to visualize these layers in sequence.  
 
 ***
 
@@ -111,15 +113,17 @@ spatial extent. For example, Habitat Complexity values are much higher around
 seamounts and canyons than coastal and shelf environments. Therefore, threshold 
 products will always highlight canyon and seamount areas while areas of high
 relative habitat complexity near the coast and on the shelf will be less 
-obvious. One option to address this issue would be to segment the data into 
-nearshore and offshore areas and calculate thresholds on those separate subsets.**    
+obvious in these maps. One option to address this issue is to segment the data 
+into nearshore and offshore areas and calculate thresholds on those separate 
+geographies.**    
 
-**If the original data were clipped to a particular study area or region, the 
-area highlighted by threshold products would be different. In this example, the 
-resulting threshold products would only represent the top 10% of the original 
-data *in that study area or region* and would not be comparable to thresholds 
-calculated for the full extent of the data or for any other study area or 
-region.**    
+**If the original data were clipped to display a particular study area or region, 
+the resulting areas highlighted by threshold products would be different from 
+areas highlighted when the full extent of the data is considered. For a clipped
+study area, the resulting threshold products would only represent the top 10% of 
+the original data *in that study area or region*, for example, and would not be 
+comparable to areas derived from thresholds calculated for the full extent of 
+the data, or for any other study area or region.**    
 
 </details>
 
@@ -130,7 +134,9 @@ Thresholds were calculated only for data products in the Habitat and
 Oceanographic Drivers, Productivity, Biodiversity, Abundance, Vulnerability, and 
 Rarity folders that represent components of ecological importance. In order to 
 calculate thresholds, original data products needed to be continuous rasters. 
-Threshold products were not generated for data products that represent areas or categories such as Canyons or Critical Habitat.  
+Aside from Habitat and Oceanographic Drivers, thresholds were calcualted mainly 
+from abundance products. Threshold products were not generated for data products 
+that represent areas or categories such as Canyons or Critical Habitat.  
 
 Threshold products were developed for every available month or season associated 
 with an original data layer.  
@@ -145,11 +151,11 @@ similar to categorical data. Initial tests of thresholds applied to these
 products generated confusing results.   
 
 * *Simpson and Shannon Diversity Indices* - because the numerical value of these 
-indices does not have absolute meaning, thresholds were not applied to these 
-products. Initial tests of thresholds applied to these products generated 
-results that were difficult to interpret.
+indices does not have an easily interpreted absolute meaning, thresholds were 
+not applied to these products. Initial tests of thresholds applied to these 
+products generated results that were difficult to interpret.
 
-**For some original data products with large numbers of zeroes, some of the threshold products include large numbers of zeroes. For the following datasets, the 50% threshold therefore displays as the full extent of the data: **  
+**For original data products with large numbers of zeroes, some of the areas highlighted by threshold products include large numbers of zeroes. For the following datasets, the 50% threshold layer therefore displays as the full extent of the data: **  
 
 * Anticyclonic eddy probability winter, spring summer  
 
